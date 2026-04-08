@@ -2,7 +2,10 @@ model_type: graphretro
 # Stage your downloaded checkpoints here. Layout:
 #   {model_dir}/{edits_exp}/checkpoints/{edits_step}.pt
 #   {model_dir}/{lg_exp}/checkpoints/{lg_step}.pt
-model_dir: ${oc.env:GRAPHRETRO_MODELS,/home/laabidn1/laabidn1/graphretro/models}
+# Default resolves relative to the repo (REPO_ROOT) so the same config works
+# locally and on puhti. Override with the GRAPHRETRO_MODELS env var or
+# `single_step_model.model_dir=...` on the CLI.
+model_dir: ${oc.env:GRAPHRETRO_MODELS,${oc.env:REPO_ROOT}/models}
 # Default to the un-typed (reaction-class-agnostic) checkpoints from the
 # upstream vsomnath/graphretro Drive. Switch to LGIndEmbedClassifier_*
 # checkpoints when you want reaction-type conditioning.
