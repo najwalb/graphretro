@@ -1,0 +1,16 @@
+model_type: graphretro
+# Stage your downloaded checkpoints here. Layout:
+#   {model_dir}/{edits_exp}/checkpoints/{edits_step}.pt
+#   {model_dir}/{lg_exp}/checkpoints/{lg_step}.pt
+model_dir: ${oc.env:GRAPHRETRO_MODELS,/home/laabidn1/laabidn1/graphretro/models}
+# Default to the un-typed (reaction-class-agnostic) checkpoints from the
+# upstream vsomnath/graphretro Drive. Switch to LGIndEmbedClassifier_*
+# checkpoints when you want reaction-type conditioning.
+edits_exp: SingleEdit_10-02-2021--08-44-37
+edits_step: epoch_156
+lg_exp: LGIndEmbed_18-02-2021--12-23-26
+lg_step: step_101951
+beam_width: 10
+max_edit_steps: 6
+default_num_results: 10
+use_cache: true

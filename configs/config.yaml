@@ -1,0 +1,14 @@
+defaults:
+  - _self_
+  - single_step_model: graphretro
+  - single_step_evaluation: uspto190
+
+general:
+  seed: 42
+  experiment_group: failures_analysis
+  experiment_name: graphretro_uspto190
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
